@@ -26,14 +26,14 @@ public class TaskService {
     }
 
     public TaskSimpleResponseDto getTask(Long taskId) {
-        Task task = taskRepository.findById(taskId).orElseThrow(()-> new IllegalArgumentException("없어유~"));
+        Task task = taskRepository.findById(taskId).orElseThrow(()-> new IllegalArgumentException("SORRY! OUT OF RESULT. :( PLEASE TRY AGAIN!"));
 
         return new TaskSimpleResponseDto(task);
     }
 
     @Transactional
     public TaskUpdateResponseDto updateTask(Long taskId, TaskUpdateRequestDto taskUpdateRequestDto) {
-        Task task = taskRepository.findById(taskId).orElseThrow(()-> new IllegalArgumentException("있는줄알았쥬?없어유~"));
+        Task task = taskRepository.findById(taskId).orElseThrow(()-> new IllegalArgumentException("SORRY! OUT OF RESULT. :( PLEASE TRY AGAIN!"));
 
         task.update(taskUpdateRequestDto);
 
